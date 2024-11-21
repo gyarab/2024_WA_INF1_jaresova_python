@@ -38,6 +38,9 @@ def primes_in_range(a, b):
     if not isinstance(a, int) or not isinstance(b, int) or a < 0 or b < 0:
         raise ValueError("Invalid input. a and b must be positive integers")
 
+    if a > b:
+        a, b = b, a  # Swap the values of a and b
+
     primes = []
     for num in range(a, b + 1):
         if is_prime(num):
