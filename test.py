@@ -26,9 +26,10 @@ def is_prime(number):
         raise ValueError("number must be a positive integer greater than 0")
     
     for i in range(2, int(number ** 0.5) + 1):
-        if number % i == 0:
+        if number % i == 0 and number != i:
             return False
     
     return True
+
 
 
