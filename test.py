@@ -22,16 +22,25 @@ def fahrenheit_to_celsius(n):
     return (n - 32) * 5/9
 
 def is_prime(number):
-        if not isinstance(number, int) or number <= 0:
-            raise ValueError("number must be a positive integer greater than 0")
-        
-        if number == 1:
+    if not isinstance(number, int) or number <= 0:
+        raise ValueError("number must be a positive integer greater than 0")
+
+    if number == 1:
+        return False
+
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0 and number != i:
             return False
-        
-        for i in range(2, int(number ** 0.5) + 1):
-            if number % i == 0 and number != i:
-                return False
-        
-        return True
 
+    return True
 
+def primes_in_range(a, b):
+    if not isinstance(a, int) or not isinstance(b, int) or a < 0 or b < 0 or a > b:
+        raise ValueError("Invalid input. a and b must be positive integers with a <= b")
+
+    primes = []
+    for num in range(a, b + 1):
+        if is_prime(num):
+            primes.append(num)
+
+    return primes
