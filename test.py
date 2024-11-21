@@ -20,7 +20,8 @@ def fahrenheit_to_celsius(n):
     if not isinstance(n, (int, float)):
         raise ValueError("n must be a number")
     return (n - 32) * 5/9
-    def is_prime(number):
+
+def is_prime(number):
         if not isinstance(number, int) or number <= 0:
             raise ValueError("number must be a positive integer greater than 0")
         
