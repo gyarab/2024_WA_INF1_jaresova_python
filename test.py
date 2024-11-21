@@ -11,4 +11,12 @@ def fibonacci(n):
         sequence.append(next_number)  # Add the next number to the sequence
     return sum(sequence)
 
-print(fibonacci(3))
+def celsius_to_farhenheit(n):
+    if not isinstance(n, (int, float)):
+        raise ValueError("n must be a number")
+    return (n * 9/5) + 32
+
+def farhenheit_to_celsius(n):
+    if not isinstance(n, (int, float)):
+        raise ValueError("n must be a number")
+    return (n - 32) * 5/9
