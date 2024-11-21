@@ -9,6 +9,6 @@ def fibonacci(n):
     while len(sequence) < n:
         next_number = sequence[-1] + sequence[-2]  # Calculate the next number in the sequence
         sequence.append(next_number)  # Add the next number to the sequence
-    return sequence[-1]
+    return sum(sequence)
 
-print(fibonacci(10))
+print(fibonacci(3))
