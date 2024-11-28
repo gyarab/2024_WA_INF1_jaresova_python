@@ -49,9 +49,13 @@ def primes_in_range(a, b):
     return primes
 
 def rotate_array(arr, n):
-    if not isinstance(arr, list) or not isinstance(n, int):
-        raise ValueError("Invalid input. arr must be a list and n must be an integer")
+        if not isinstance(arr, list) or not isinstance(n, int):
+            raise ValueError("Invalid input. arr must be a list and n must be an integer")
 
-    n = n % len(arr)  # Normalize n to be within the length of the array
-    return arr[-n:] + arr[:-n]
+        if n < 0:
+            n = abs(n) % len(arr)  # Normalize n to be within the length of the array
+            return arr[n:] + arr[:n]
+        else:
+            n = n % len(arr)  # Normalize n to be within the length of the array
+            return arr[-n:] + arr[:-n]
 
