@@ -76,7 +76,7 @@ def vowels_and_consonants(text):
     if not isinstance(text, str):
         raise ValueError("text must be a string")
 
-    vowels = "aeiouáéíóúůý"
+    vowels = "aeiouáěéíóúůý"
     consonants = "bcčdďfghjklmnňpqrřsštťvwxzž"
 
     text = text.lower()
@@ -88,3 +88,4 @@ def vowels_and_consonants(text):
     consonant_count = sum(1 for c in text if c in consonants)
 
     return {"vowels": vowel_count, "consonants": consonant_count}
+
