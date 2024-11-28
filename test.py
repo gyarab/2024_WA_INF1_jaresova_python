@@ -61,3 +61,13 @@ def rotate_array(arr, n):
         else:
             n = n % len(arr)  # Normalize n to be within the length of the array
             return arr[-n:] + arr[:-n]
+        
+def split_into_threes(text):
+    if not isinstance(text, str):
+        raise ValueError("text must be a string")
+    if len(text) % 3 != 0:
+        last_string = text[-(len(text) % 3):]
+        text = text[:-(len(text) % 3)]
+        return [text[i:i+3] for i in range(0, len(text), 3)] + [last_string]
+    else:
+        return [text[i:i+3] for i in range(0, len(text), 3)]
