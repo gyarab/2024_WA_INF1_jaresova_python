@@ -71,3 +71,20 @@ def split_into_threes(text):
         return [text[i:i+3] for i in range(0, len(text), 3)] + [last_string]
     else:
         return [text[i:i+3] for i in range(0, len(text), 3)]
+
+def vowels_and_consonants(text):
+    if not isinstance(text, str):
+        raise ValueError("text must be a string")
+
+    vowels = "aeiouáéíóúůý"
+    consonants = "bcčdďfghjklmnňpqrřsštťvwxzž"
+
+    text = text.lower()
+    import string
+    
+    text = ''.join(c for c in text if c.isalpha() and c not in string.digits and c not in string.punctuation)
+
+    vowel_count = sum(1 for c in text if c in vowels)
+    consonant_count = sum(1 for c in text if c in consonants)
+
+    return {"vowels": vowel_count, "consonants": consonant_count}
