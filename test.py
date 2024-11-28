@@ -72,7 +72,7 @@ def split_into_threes(text):
     else:
         return [text[i:i+3] for i in range(0, len(text), 3)]
 
-def class_and_break_time(start_class, end_class):
+def class_and_break_time(start_class, end_class): 
     if not isinstance(start_class, int) or not isinstance(end_class, int) or start_class < 0 or end_class < 0:
         raise ValueError("Invalid input. start_class and end_class must be non-negative integers")
 
@@ -83,8 +83,26 @@ def class_and_break_time(start_class, end_class):
     break_durations = [0, 5, 10, 20, 10, 10, 5, 5, 10, 10, 5, 5]
 
     total_class_time = (end_class - start_class + 1) * class_duration
-    total_break_time = 0 if start_class == end_class or start_class == 0 and end_class == 1 else sum(break_durations[start_class:end_class]) + break_durations[end_class]
+    total_break_time = 0 if start_class == end_class else sum(break_durations[start_class-1:end_class])
 
     return total_class_time, total_break_time
 
+def css_color_to_rgb(color):
+    if not isinstance(color, str):
+        raise ValueError("color must be a string")
+
+    if color[0] == "#":
+        color = color[1:]
+
+    if len(color) == 3:
+        color = "".join([2 * c for c in color])
+
+    if len(color) != 6:
+        raise ValueError("Invalid color format. Must be in the format '#RRGGBB' or 'RRGGBB'")
+
+    r = int(color[:2], 16)
+    g = int(color[2:4], 16)
+    b = int(color[4:], 16)
+
+    return r, g, b
 
