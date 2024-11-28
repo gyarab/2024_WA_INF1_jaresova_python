@@ -72,20 +72,20 @@ def split_into_threes(text):
     else:
         return [text[i:i+3] for i in range(0, len(text), 3)]
 
-def vowels_and_consonants(text):
-    if not isinstance(text, str):
-        raise ValueError("text must be a string")
+def class_and_break_time(start_class, end_class):
+    if not isinstance(start_class, int) or not isinstance(end_class, int) or start_class < 0 or end_class < 0:
+        raise ValueError("Invalid input. start_class and end_class must be non-negative integers")
 
-    vowels = "aeiouáěéíóúůý"
-    consonants = "bcčdďfghjklmnňpqrřsštťvwxzž"
+    if start_class > end_class or start_class > 12 or end_class > 12:
+        raise ValueError("Invalid input. start_class and end_class must be between 0 and 12")
 
-    text = text.lower()
-    import string
-    
-    text = ''.join(c for c in text if c.isalpha() and c not in string.digits and c not in string.punctuation)
+    class_duration = 45
+    break_durations = [0, 5, 10, 20, 10, 10, 5, 5, 10, 10, 5, 5]
 
-    vowel_count = sum(1 for c in text if c in vowels)
-    consonant_count = sum(1 for c in text if c in consonants)
+    total_class_time = (end_class - start_class + 1) * class_duration
+    total_break_time = sum(break_durations[start_class:end_class])
 
-    return {"vowels": vowel_count, "consonants": consonant_count}
+    return total_class_time, total_break_time
+
+
 
