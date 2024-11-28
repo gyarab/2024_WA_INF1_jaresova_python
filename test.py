@@ -52,10 +52,12 @@ def rotate_array(arr, n):
         if not isinstance(arr, list) or not isinstance(n, int):
             raise ValueError("Invalid input. arr must be a list and n must be an integer")
 
+        if len(arr) == 0:
+            return arr
+
         if n < 0:
             n = abs(n) % len(arr)  # Normalize n to be within the length of the array
             return arr[n:] + arr[:n]
         else:
             n = n % len(arr)  # Normalize n to be within the length of the array
             return arr[-n:] + arr[:-n]
-
