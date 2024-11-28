@@ -83,8 +83,7 @@ def class_and_break_time(start_class, end_class):
     break_durations = [0, 5, 10, 20, 10, 10, 5, 5, 10, 10, 5, 5]
 
     total_class_time = (end_class - start_class + 1) * class_duration
-    total_break_time = sum(break_durations[start_class:end_class]) + break_durations[end_class]
+    total_break_time = 0 if start_class == end_class else sum(break_durations[start_class:end_class]) + break_durations[end_class]
 
     return total_class_time, total_break_time
-
 
