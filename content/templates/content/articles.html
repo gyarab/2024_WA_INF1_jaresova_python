@@ -1,0 +1,13 @@
+{% extends "content/base.html" %}
+
+{% block title %}
+<h1>Seznam článků</h1>
+{% endblock %}
+
+
+{% block main %}
+    {% for article in data %}
+        <h2><a href = "{% url 'content:article' forloop.counter0 %}">{{article.title}}</a></h2>
+        <p>{{article.perex | add:"..."}}</p>
+    {% endfor %}
+{% endblock %}
