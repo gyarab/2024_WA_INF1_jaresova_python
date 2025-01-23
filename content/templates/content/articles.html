@@ -11,6 +11,7 @@
         </hr>
     {% endif %}
         <h2><a href = "{% url 'content:article' article.id %}">{{article.title}}</a></h2>
+        <strong>{{article.category.name}}</strong>
         <p>{{article.perex}}</p>
     {% endfor %}
 {% endblock %}
