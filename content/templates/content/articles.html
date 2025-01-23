@@ -6,8 +6,11 @@
 
 
 {% block main %}
-    {% for article in data %}
-        <h2><a href = "{% url 'content:article' forloop.counter0 %}">{{article.title}}</a></h2>
-        <p>{{article.perex | add:"..."}}</p>
+    {% for article in articles %}
+    {% if forloop.counter0 == 1 %}
+        </hr>
+    {% endif %}
+        <h2><a href = "{% url 'content:article' article.id %}">{{article.title}}</a></h2>
+        <p>{{article.perex}}</p>
     {% endfor %}
 {% endblock %}
