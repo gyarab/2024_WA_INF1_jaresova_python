@@ -1,0 +1,67 @@
+[
+    {
+      "model": "content.category",
+      "pk": 1,
+      "fields": {
+        "name": "OwO"
+      }
+    },
+    {
+      "model": "content.category",
+      "pk": 2,
+      "fields": {
+        "name": "TwT"
+      }
+    },
+    {
+      "model": "content.category",
+      "pk": 3,
+      "fields": {
+        "name": "IT"
+      }
+    },
+    {
+      "model": "content.article",
+      "pk": 1,
+      "fields": {
+        "title": "UWU",
+        "perex": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professo",
+        "text": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
+        "published": "2025-01-30T12:00:00Z",
+        "category": 2
+      }
+    },
+    {
+      "model": "content.article",
+      "pk": 2,
+      "fields": {
+        "title": "hmmmmmmmm",
+        "perex": "Happz birthdaz to me happz birthdaz to me, everzbodz likes me, happz birthdaz to me",
+        "text": "Moew.\r\nImma kill ma self",
+        "published": "2025-01-30T10:35:17Z",
+        "category": 1
+      }
+    },
+    {
+      "model": "content.article",
+      "pk": 3,
+      "fields": {
+        "title": "scammers attack",
+        "perex": "They're annoying us again >:(",
+        "text": "iuewsahtfidrj digjf oisajd   a owo ahhsjdha  reirujs reeeeeeeee dsjfksdjf s  D:<",
+        "published": "2025-01-30T10:30:32Z",
+        "category": 3
+      }
+    },
+    {
+        "model": "content.article",
+        "pk": 4,
+        "fields": {
+          "title": "scammers snack",
+          "perex": "hallooooooo",
+          "text": "no no no no no sir D:<",
+          "published": "2025-01-30T11:30:32Z",
+          "category": 3
+        }
+      }
+    ]
