@@ -1,11 +1,16 @@
 {% extends "content/base.html" %}
 
 {% block title %}
-   <h1>{{ article.title }}</h1>
+   <h2>{{ article.title }}</h2>
 {% endblock %}
 
 {% block main %}
    <p>{{article.perex}}</p>
+   <strong>
+      {% for category in article.categories.all %}
+      <a href="{% url 'content:category' category.id %}">{{category.name}}</a> {% if not forloop.last %}, {% endif %}
+      {% endfor %}
+   </strong>   
    <p>{{article.text}}</p>
 
    <a href="{% url 'content:articles' %}">Zpet na seznam</a>
