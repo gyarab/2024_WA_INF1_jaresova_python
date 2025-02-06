@@ -9,7 +9,7 @@ Rubrika {{category.name}}
         <h2><a href = "{% url 'content:article' article.id %}">{{article.title}}</a></h2>
         <strong>
             {% for category in article.categories.all %}
-                {{category.name}} {% if not forloop.last %}, {% endif %}
+            <a href="{% url 'content:category' category.id %}">{{category.name}}</a> {% if not forloop.last %}, {% endif %}
             {% endfor %}
         </strong>
         <p>{{article.perex}}</p>
