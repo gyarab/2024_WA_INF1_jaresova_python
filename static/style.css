@@ -7,3 +7,10 @@ h1{
     color: rgb(93, 23, 110);
     text-align: center;
 }
+
+h2{
+    color: rgb(23, 110, 106);
+}
+a:hover{
+    color: rgb(48, 110, 23);
+}

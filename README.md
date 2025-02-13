@@ -1,3 +1,3 @@
 # 2024_WA_INF1_jaresova_python
-Práce v pythonu na předmět webové aplikace
+Úkol v pythonu na předmět webové aplikace - web o starých hrách na pc pro děti
 Jarešová 3.E
