@@ -5,14 +5,14 @@ Rubrika {{category.name}}
 {% endblock %}
 
 {% block main %}
-    {% for article in articles %}
-        <h2><a href = "{% url 'content:article' article.id %}">{{article.title}}</a></h2>
+    {% for game in games %}
+        <h2><a href = "{% url 'content:game' game.id %}">{{game.name}}</a></h2>
         <strong>
             {% for category in article.categories.all %}
             <a href="{% url 'content:category' category.id %}">{{category.name}}</a> {% if not forloop.last %}, {% endif %}
             {% endfor %}
         </strong>
-        <p>{{article.perex}}</p>
+        <p>{{game.about}}</p>
     {% endfor %}
-    <a href="{% url 'content:articles' %}">Zpet na seznam</a>
+    <a href="{% url 'content:games' %}">Zpet na seznam</a>
 {% endblock %}

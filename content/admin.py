@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Article, Category
+from .models import Game, Category
 
-class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title']
-    list_display_links = ['id', 'title']
-    date_hierarchy = 'published'
-    search_fields = ['title', 'perex', 'text']
+class GameAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+    list_display_links = ['id', 'name']
+    date_hierarchy = 'came out on'
+    search_fields = ['name', 'rating', 'about']
 
 # Register your models here.
-admin.site.register(Article,ArticleAdmin)
+admin.site.register(Game,GameAdmin)
 admin.site.register(Category)
