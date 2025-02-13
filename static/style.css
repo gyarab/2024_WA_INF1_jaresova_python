@@ -23,16 +23,112 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
+    padding: 1px 0;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    font-size: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+a {
+    background-color: #904caf;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: rgb(48, 4, 49);
+    text-decoration: none;
+}
+
+a[href*="game"] {
+    font-size: 26px;
+    color: rgb(65, 12, 95);
+    background-color: #4c98af;
+}
+
+a[href*="game"]:hover {
+    background-color: #ffaa00;
+    color: #fff;
 }
 
 a:hover {
-    color: rgb(48, 110, 23);
+    color: rgb(190, 255, 164);
 }
 
-strong {
-    margin: 25px;
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+}
+
+.homepage a {
+    background-color: #904caf;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.ratingsa a {
+    background-color: #4c7aaf;
+    border: none;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: rgb(48, 4, 49);
+    text-decoration: none;
+}
+
+.authorsa a{
+    background-color: #4c7aaf;
+    border: none;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: rgb(48, 4, 49);
+    text-decoration: none;
+}
+
+.ratingsa a:hover{
+    background-color: #514fdf;
+    color: rgb(255, 255, 255);
+}
+
+.authorsa a:hover{
+    background-color: #2bc7bf;
+    color: rgb(255, 255, 255);
+}
+
+.homepage a:hover {
+    background-color: #5e2977;
+    color: rgb(234, 240, 152);
+}
+
+.back_button a {
+    cursor: pointer;
 }

@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block main %}
+<div class="homepage">
 <p>This web will be used to rate games I played in my childhood.</p>
 <a href="{% url 'content:games' %}">View Games</a>
 <a href="{% url 'content:ratings' %}">View Ratings</a>
 <a href="{% url 'content:authors' %}">View Game Authors</a>
+</div>
 {% endblock %}

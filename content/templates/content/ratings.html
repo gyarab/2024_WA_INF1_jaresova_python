@@ -7,10 +7,10 @@
 {% block main %}
     <ul>
         {% for rating in ratings %}
-        <li>
+        <li><div class="ratingsa">
             <a href="{% url 'content:rating' rating.id %}">Games rated as {{ rating.stars }}</a>
-        </li>
+        </div></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'content:homepage' %}">Back to homepage</a>
+    <div class="back_button"><a href="{% url 'content:homepage' %}">Back to homepage</a></div>
 {% endblock %}

@@ -1,1 +1,252 @@
-[{"model": "content.author", "pk": 1, "fields": {"name": "CENEGA"}}, {"model": "content.author", "pk": 2, "fields": {"name": "Disney Interactive Studios"}}, {"model": "content.author", "pk": 3, "fields": {"name": "THQ"}}, {"model": "content.author", "pk": 4, "fields": {"name": "Buena Vista Games"}}, {"model": "content.author", "pk": 5, "fields": {"name": "DTP Entertainment"}}, {"model": "content.rating", "pk": 1, "fields": {"stars": 10.0}}, {"model": "content.rating", "pk": 2, "fields": {"stars": 9.5}}, {"model": "content.rating", "pk": 3, "fields": {"stars": 9.0}}, {"model": "content.rating", "pk": 4, "fields": {"stars": 8.5}}, {"model": "content.rating", "pk": 5, "fields": {"stars": 8.0}}, {"model": "content.rating", "pk": 6, "fields": {"stars": 7.5}}, {"model": "content.rating", "pk": 7, "fields": {"stars": 7.0}}, {"model": "content.rating", "pk": 8, "fields": {"stars": 6.5}}, {"model": "content.rating", "pk": 9, "fields": {"stars": 6.0}}, {"model": "content.rating", "pk": 10, "fields": {"stars": 5.5}}, {"model": "content.rating", "pk": 12, "fields": {"stars": 5.0}}, {"model": "content.rating", "pk": 13, "fields": {"stars": 4.5}}, {"model": "content.rating", "pk": 14, "fields": {"stars": 4.0}}, {"model": "content.rating", "pk": 15, "fields": {"stars": 3.5}}, {"model": "content.rating", "pk": 16, "fields": {"stars": 3.0}}, {"model": "content.rating", "pk": 17, "fields": {"stars": 2.5}}, {"model": "content.rating", "pk": 18, "fields": {"stars": 2.0}}, {"model": "content.rating", "pk": 19, "fields": {"stars": 1.5}}, {"model": "content.rating", "pk": 20, "fields": {"stars": 1.0}}, {"model": "content.rating", "pk": 21, "fields": {"stars": 0.5}}, {"model": "content.rating", "pk": 22, "fields": {"stars": 0.0}}, {"model": "content.game", "pk": 1, "fields": {"name": "Ratatouille", "came_out_on": "2007-06-26", "rating": 1, "about": "This game was inspired by the film ratatouille.", "author": [2, 3]}}]
+[
+    {
+        "model": "content.author",
+        "pk": 1,
+        "fields": {
+            "name": "CENEGA"
+        }
+    },
+    {
+        "model": "content.author",
+        "pk": 2,
+        "fields": {
+            "name": "Disney Interactive Studios"
+        }
+    },
+    {
+        "model": "content.author",
+        "pk": 3,
+        "fields": {
+            "name": "THQ"
+        }
+    },
+    {
+        "model": "content.author",
+        "pk": 4,
+        "fields": {
+            "name": "Buena Vista Games"
+        }
+    },
+    {
+        "model": "content.author",
+        "pk": 5,
+        "fields": {
+            "name": "DTP Entertainment"
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 1,
+        "fields": {
+            "stars": 10.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 2,
+        "fields": {
+            "stars": 9.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 3,
+        "fields": {
+            "stars": 9.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 4,
+        "fields": {
+            "stars": 8.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 5,
+        "fields": {
+            "stars": 8.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 6,
+        "fields": {
+            "stars": 7.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 7,
+        "fields": {
+            "stars": 7.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 8,
+        "fields": {
+            "stars": 6.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 9,
+        "fields": {
+            "stars": 6.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 10,
+        "fields": {
+            "stars": 5.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 12,
+        "fields": {
+            "stars": 5.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 13,
+        "fields": {
+            "stars": 4.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 14,
+        "fields": {
+            "stars": 4.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 15,
+        "fields": {
+            "stars": 3.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 16,
+        "fields": {
+            "stars": 3.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 17,
+        "fields": {
+            "stars": 2.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 18,
+        "fields": {
+            "stars": 2.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 19,
+        "fields": {
+            "stars": 1.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 20,
+        "fields": {
+            "stars": 1.0
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 21,
+        "fields": {
+            "stars": 0.5
+        }
+    },
+    {
+        "model": "content.rating",
+        "pk": 22,
+        "fields": {
+            "stars": 0.0
+        }
+    },
+    {
+        "model": "content.game",
+        "pk": 1,
+        "fields": {
+            "name": "Ratatouille",
+            "came_out_on": "2007-06-26",
+            "rating": 1,
+            "about": "This game was inspired by the film ratatouille.",
+            "author": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "content.game",
+        "pk": 8,
+        "fields": {
+            "name": "WALL-E",
+            "came_out_on": "2008-05-23",
+            "rating": 2,
+            "about": "This game is awesome.",
+            "author": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "content.game",
+        "pk": 9,
+        "fields": {
+            "name": "Ctyrlistek",
+            "came_out_on": "2002-01-01",
+            "rating": 10,
+            "about": "The only czech made game here.",
+            "author": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "content.game",
+        "pk": 10,
+        "fields": {
+            "name": "O pejskovi a kocicce",
+            "came_out_on": "2004-03-14",
+            "rating": 9,
+            "about": "A german made game with great gameplay, but no safefiles :/",
+            "author": [
+                5
+            ]
+        }
+    },
+    {
+        "model": "content.game",
+        "pk": 11,
+        "fields": {
+            "name": "Cars",
+            "came_out_on": "2006-06-06",
+            "rating": 7,
+            "about": "A good game with a pretty solid open world for a kids game.",
+            "author": [
+                2,
+                4
+            ]
+        }
+    }
+]

@@ -7,10 +7,10 @@
 {% block main %}
     <ul>
         {% for author in authors %}
-        <li>
+        <li><div class="authorsa">
             <a href="{% url 'content:author' author.id %}">{{ author.name }}</a>
-        </li>
+        </div></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'content:homepage' %}">Back to homepage</a>
+    <div class="back_button"><a href="{% url 'content:homepage' %}">Back to homepage</a></div>
 {% endblock %}
