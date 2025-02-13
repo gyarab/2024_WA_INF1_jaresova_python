@@ -1,0 +1,16 @@
+{% extends "content/base.html" %}
+
+{% block title %}
+<h1>List of Authors</h1>
+{% endblock %}
+
+{% block main %}
+    <ul>
+        {% for author in authors %}
+        <li>
+            <a href="{% url 'content:author' author.id %}">{{ author.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'content:homepage' %}">Back to homepage</a>
+{% endblock %}

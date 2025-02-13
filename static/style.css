@@ -1,33 +1,38 @@
 body {
     background-color: rgb(243, 205, 248);
-
 }
 
-h1{
+h1 {
     color: rgb(255, 253, 144);
     text-shadow: 1px 1px 2px rgb(60, 24, 82);
     text-align: center;
     font-size: 50px;
 }
 
-h2{
+h2 {
     color: rgb(23, 110, 106);
-    font-size: 25px;  
+    font-size: 25px;
 }
 
-main{
+main {
     padding: 10px;
     margin: 10px;
 }
 
-footer{
-    padding: 50px;
-    margin: 50px;
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
-a:hover{
+a:hover {
     color: rgb(48, 110, 23);
 }
-strong{
-    margin: 25px;}
-    
+
+strong {
+    margin: 25px;
+}

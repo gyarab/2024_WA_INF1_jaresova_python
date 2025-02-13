@@ -1,0 +1,17 @@
+{% extends "content/base.html" %}
+
+{% block title %}
+   <h2>{{ game.name }}</h2>
+{% endblock %}
+
+{% block main %}
+   <strong>
+      <a href="{% url 'content:rating' game.rating.id %}">Rating: {{ game.rating.stars }}</a> <br>
+      {% for author in game.author.all %}
+      <a href="{% url 'content:author' author.id %}">{{author.name}}</a> {% if not forloop.last %}, {% endif %}
+      {% endfor %}
+   </strong>   
+   <p>{{game.about}}</p>
+
+   <a href="javascript:history.back()">Back to previous page</a>
+{% endblock %}

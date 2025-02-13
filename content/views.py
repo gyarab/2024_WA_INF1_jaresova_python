@@ -2,26 +2,37 @@ from http.client import HTTPResponse
 import json
 from django.shortcuts import render
 from django.urls import reverse
-from content.models import Game, Category
+from content.models import Game, Author, Rating
 
 # Create your views here.
-def category(request, id):
-    category=Category.objects.get(id=id)
-    games= category.games.all()
+def author(request, id):
+    author=Author.objects.get(id=id)
+    games= author.games.all()
 
-    return render(request, 'content/category.html', {'category':category,'games':games})
+    return render(request, 'content/author.html', {'author':author,'games':games})
+
+def rating(request, id):
+    rating=Rating.objects.get(id=id)
+    games= rating.games.all()
+
+    return render(request, 'content/rating.html', {'rating':rating,'games':games})
 
 def game(request, id):
-    game=Category.objects.get(id=id)
+    game=Game.objects.get(id=id)
 
     return render(request, 'content/game.html', {'game': game})
 
 def games(request):
-    games=Category.objects.all()
+    games=Game.objects.all()
 
     return render(request, 'content/games.html', {'games': games})
+def homepage(request):
+    return render(request, 'content/homepage.html')
+def authors(request):
+    authors=Author.objects.all()
 
-def companies(request):
-    companies=Category.objects.all()
+    return render(request, 'content/authors.html', {'authors': authors})
+def ratings(request):
+    ratings=Rating.objects.all()
 
-    return render(request, 'content/companies.html', {'companies': companies})
+    return render(request, 'content/ratings.html', {'ratings': ratings})

@@ -1,0 +1,16 @@
+{% extends "content/base.html" %}
+
+{% block title %}
+<h1>List of Ratings</h1>
+{% endblock %}
+
+{% block main %}
+    <ul>
+        {% for rating in ratings %}
+        <li>
+            <a href="{% url 'content:rating' rating.id %}">Games rated as {{ rating.stars }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'content:homepage' %}">Back to homepage</a>
+{% endblock %}
