@@ -12,5 +12,23 @@
       {% endfor %}
    </strong>   
    <p>{{game.about}}</p>
+
+   <div>
+         <form action="" method="post">
+           {% csrf_token %}
+            {{form}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+         </form>
+   </div>
+         <h2>Comments</h2>
+         <ul>
+            {% for comment in game.comments.all %}
+            <div class="comment">
+                  <strong>{{comment.name}}</strong>
+                  <p>{{comment.text}}</p>
+            </div>
+            {% endfor %}
+   
+
 <div class="back_button"><a href="javascript:history.back()">Back to previous page</a></div>
 {% endblock %}
