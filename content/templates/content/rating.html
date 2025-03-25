@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block main %}
+<div class="game-container">
     {% if games %}
         {% for game in games %}
+        <div class="game-item">
             <h2><a href="{% url 'content:game' game.id %}">{{ game.name }}</a></h2>
             <strong>
                 <a href="{% url 'content:rating' game.rating.id %}">Rating: {{ game.rating.stars }}</a> <br>
@@ -14,8 +16,10 @@
                 <a href="{% url 'content:author' author.id %}">{{ author.name }}</a>{% if not forloop.last %}, {% endif %}
                 {% endfor %}
             </strong>
-            <p>{{ game.about }}</p>
+            <p id='about'>{{ game.about }}</p>
+        </div>
         {% endfor %}
+    </div>
     {% else %}
         <p>No games rated as {{ rating.stars }}.</p>
     {% endif %}

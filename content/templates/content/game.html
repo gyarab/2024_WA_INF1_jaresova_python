@@ -11,7 +11,7 @@
       <a href="{% url 'content:author' author.id %}">{{author.name}}</a> {% if not forloop.last %}, {% endif %}
       {% endfor %}
    </strong>   
-   <p>{{game.about}}</p>
+   <p id='about'>{{ game.about }}</p>
 
    <div>
          <form action="" method="post">
