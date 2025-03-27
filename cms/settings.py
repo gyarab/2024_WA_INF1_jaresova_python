@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["oldgames.svs.gyarab.cz", "127.0.0.1"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://oldgames.svs.gyarab.cz',
+]
+
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
