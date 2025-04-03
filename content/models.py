@@ -23,6 +23,7 @@ class Game (models.Model):
     author=models.ManyToManyField(Author, related_name='games')
     came_out_on=models.DateField() 
     rating=models.ForeignKey(Rating, on_delete=models.CASCADE, related_name='games')
+    art=models.ImageField(upload_to='art', null=True, blank=True)
     
     about=models.TextField()
     def __str__(self):
