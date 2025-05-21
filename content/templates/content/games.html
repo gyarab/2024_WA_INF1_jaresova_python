@@ -6,7 +6,7 @@
 
 
 {% block main %}
-<div class="game-container">
+<div class="games-page-container">
     {% for game in games %}
     <div class="game-item">
         <h2><a href = "{% url 'content:game' game.id %}">{{game.name}}</a></h2>

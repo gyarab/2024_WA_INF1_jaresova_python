@@ -1,34 +1,46 @@
 {% extends "content/base.html" %}
 
 {% block title %}
-   <h2>{{ game.name }}</h2>
+   <div class="game-header">
+      <h2>{{ game.name }}</h2>
+      {% if game.art %}
+         <img src="{{ game.art.url }}" alt="{{ game.name }} artwork" class="game-art">
+      {% endif %}
+   </div>
 {% endblock %}
 
 {% block main %}
-   <strong>
-      <a href="{% url 'content:rating' game.rating.id %}">Rating: {{ game.rating.stars }}</a> <br>
-      {% for author in game.author.all %}
-      <a href="{% url 'content:author' author.id %}">{{author.name}}</a> {% if not forloop.last %}, {% endif %}
-      {% endfor %}
-   </strong>   
-   <p id='about'>{{ game.about }}</p>
+   <div class="game-container">
+      <div class="game-details">
+         <strong>
+            <a href="{% url 'content:rating' game.rating.id %}">Rating: {{ game.rating.stars }}</a> <br>
+            {% for author in game.author.all %}
+            <a href="{% url 'content:author' author.id %}">{{author.name}}</a> {% if not forloop.last %}, {% endif %}
+            {% endfor %}
+         </strong>   
+         <p id='about'>{{ game.about }}</p>
+      </div>
 
-   <div>
+      <div class="comment-section">
          <form action="" method="post">
-           {% csrf_token %}
-            {{form}}
+            {% csrf_token %}
+            {{ form }}
             <button type="submit" class="btn btn-primary">Submit</button>
          </form>
-   </div>
+
          <h2>Comments</h2>
          <ul>
             {% for comment in game.comments.all %}
             <div class="comment">
-                  <strong>{{comment.name}}</strong>
-                  <p>{{comment.text}}</p>
+               <strong>{{ comment.name }}</strong>
+               <p>{{ comment.text }}</p>
             </div>
             {% endfor %}
-   
+         </ul>
+      </div>
 
-<div class="back_button"><a href="javascript:history.back()">Back to previous page</a></div>
+      <div class="back-button">
+         <a href="javascript:history.back()">Back to previous page</a>
+      </div>
+   </div>
 {% endblock %}

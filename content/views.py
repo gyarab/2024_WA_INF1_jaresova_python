@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from content.forms import CommentForm, LoginForm
 from content.models import Comment, Game, Author, Rating
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def author(request, id):
@@ -55,30 +55,25 @@ def ratings(request):
 
     return render(request, 'content/ratings.html', {'ratings': ratings})
 
-def login(request):
-    user = request.user	
-
+def login_view(request):
     if request.user.is_authenticated:
-        form = LogoutForm(request.POST)
-        if request.method == 'POST' and form.is_valid():
-            logout(request)
-            return HttpResponseRedirect(reverse('my_app:login'))
-        else:
-            form = LogoutForm()
-            return render(request, 'my_app/login.html', {'form': form, 'user': request.user})
+        return HttpResponseRedirect(reverse('content:homepage'))  # Redirect authenticated users
 
-    else:
-        form = LoginForm(request.POST)
-        if request.method == 'POST' and form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return HttpResponseRedirect(reverse('content:login'))
-            else:
-                form.add_error(None, 'Neplatné přihlašovací údaje')
+    form = LoginForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)  # Correct usage of login()
+            return HttpResponseRedirect(reverse('content:homepage'))  # Redirect after successful login
         else:
-            form = LoginForm()
-            return render(request, 'content/login.html', {'form': form, 'user': request.user})
-    
+            form.add_error(None, 'Neplatné přihlašovací údaje')
+
+    return render(request, 'content/login.html', {'form': form})
+
+
+def logout_view(request):
+    if request.user.is_authenticated:
+        logout(request)
+    return HttpResponseRedirect(reverse('content:login'))  # Redirect to login page after logout

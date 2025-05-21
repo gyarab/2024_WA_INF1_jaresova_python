@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from content.views import author, game, games, rating, homepage, ratings, authors, login
+from content.views import author, game, games, rating, homepage, ratings, authors, login_view
 
 app_name = 'content'
 
@@ -12,5 +12,5 @@ urlpatterns = [
     path("author/<int:id>", author, name="author"), 
     path("rating/<int:id>", rating, name="rating"), 
     path("game/<int:id>", game, name="game"),
-    path("login", login, name="login"),
+    path("login", login_view, name="login"),
 ]

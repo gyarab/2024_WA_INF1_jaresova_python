@@ -10,6 +10,18 @@
 </head>
 
 <body>
+    <header class="main-header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'content:homepage' %}">Homepage</a></li>
+                <li><a href="{% url 'content:games' %}">Games</a></li>
+                <li><a href="{% url 'content:authors' %}">Authors</a></li>
+                <li><a href="{% url 'content:ratings' %}">Ratings</a></li>
+                <li><a href="{% url 'content:login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
     {% block title %}
     {% endblock %}
     <main>
