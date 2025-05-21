@@ -24,7 +24,12 @@
       <div class="comment-section">
          <form action="" method="post">
             {% csrf_token %}
+            {% if not user.is_authenticated %}
             {{ form }}
+            {% endif %}
+            {% if user.is_authenticated %}
+            {{ form.text }}
+            {% endif %}
             <button type="submit" class="btn btn-primary">Submit</button>
          </form>
 

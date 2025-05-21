@@ -7,34 +7,46 @@
 {% block main %}
 <div class="login-container">
     <div class="login-options">
-        <!-- Google OAuth Login -->
-        <div class="oauth-login">
-            <h2>Login with Google</h2>
-            <a href="{% url 'social:begin' 'google' %}" class="btn btn-google">Login with Google</a>
-        </div>
+        {% if not user.is_authenticated %}
+            <div class="oauth-login">
+                <h2>Login with Google</h2>
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-google">Login with Google</a>
+            </div>
 
-        <!-- Traditional Login Form -->
-        <div class="traditional-login">
-            <h2>Login with Username and Password</h2>
-            <form action="{% url 'content:login' %}" method="POST">
+            <div class="traditional-login">
+                <h2>Login with Username and Password</h2>
+                <form action="{% url 'content:login' %}" method="POST">
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="form-errors">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+
+            <div class="register">
+                <h2>Register</h2>
+                <a href="{% url 'content:register' %}" class="btn btn-primary">Don't have an account yet? Register here!</a>
+            </div>
+        {% else %}
+            <div class="alert alert-success" role="alert">
+                You are logged in as {{ user.username }}.
+            </div>
+            <form action="{% url 'content:logout' %}" method="POST">
                 {% csrf_token %}
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Logout</button>
             </form>
-        </div>
+        {% endif %}
     </div>
-
-    {% if user.is_authenticated %}
-    <div class="alert alert-success" role="alert">
-        You are logged in as {{ user.username }}.
-    </div>
-    {% endif %}
 </div>
 {% endblock %}

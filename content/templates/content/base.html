@@ -13,11 +13,15 @@
     <header class="main-header">
         <nav class="navbar">
             <ul>
-                <li><a href="{% url 'content:homepage' %}">Homepage</a></li>
-                <li><a href="{% url 'content:games' %}">Games</a></li>
-                <li><a href="{% url 'content:authors' %}">Authors</a></li>
-                <li><a href="{% url 'content:ratings' %}">Ratings</a></li>
-                <li><a href="{% url 'content:login' %}">Login</a></li>
+                <li><a class="nav-btn" href="{% url 'content:homepage' %}">Homepage</a></li>
+                <li><a class="nav-btn" href="{% url 'content:games' %}">Games</a></li>
+                <li><a class="nav-btn" href="{% url 'content:authors' %}">Authors</a></li>
+                <li><a class="nav-btn" href="{% url 'content:ratings' %}">Ratings</a></li>
+                {% if user.is_authenticated %}
+                <li><a class="nav-btn" href="{% url 'content:login' %}">Logout</a></li>
+                {% else %}
+                <li><a class="nav-btn" href="{% url 'content:login' %}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

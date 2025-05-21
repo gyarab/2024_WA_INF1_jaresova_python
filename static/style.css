@@ -283,7 +283,7 @@ a:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar a:hover, .traditional-login button:hover, .oauth-login a:hover, .register a:hover, .btn-primary:hover {
     background-color: #2bc7bf;
     color: #fff;
 }
@@ -328,22 +328,36 @@ a:hover {
     transition: background-color 0.3s ease;
 }
 
-.btn-google {
-    background-color: #db4437;
-    color: white;
+.traditional-login, .oauth-login, .register {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.traditional-login button, .oauth-login a, .register a, .btn-primary {
+    background-color: #6292ca;
+    color: rgb(29, 65, 75);
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
     border: none;
+    max-width: fit-content;
+    align-self: center;
 }
 
-.btn-google:hover {
-    background-color: #c23321;
+.login-container {
+    background-color: #bed8f5;
 }
-
-.btn-primary {
-    background-color: #4c7aaf;
-    color: white;
-    border: none;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-.btn-primary:hover {
-    background-color: #3b5f8c;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;      
+    width: 100%;
 }
